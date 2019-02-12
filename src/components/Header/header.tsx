@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { StatelessComponent, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import style from './header.css';
 import FontAwesome from 'react-fontawesome';
 
-const Header = () => {
+//components
+import SideNav from './SideNav/sideNav';
+
+export interface IProp {
+  showNav: boolean;
+  onHideNav: any;
+  onOpenNav: any;
+}
+
+const Header = (props: IProp) => {
   const logo = () => (
     <Link to="/" className={style.logo}>
       <img alt="nba logo" src="/images/nba_logo.png" />
@@ -14,6 +23,7 @@ const Header = () => {
     <div className={style.bars}>
       <FontAwesome
         name="bars"
+        onClick={props.onOpenNav}
         style={{
           color: '#dfdfdf',
           padding: '10px',
@@ -25,6 +35,7 @@ const Header = () => {
 
   return (
     <header className={style.header}>
+      <SideNav {...props} />
       <div className={style.headerOpt}>
         {navBars()}
         {logo()}
