@@ -20,7 +20,6 @@ const SliderTemplates = (props: IState) => {
   switch (props.type) {
     case 'featured':
       template = props.news.map((item, i) => {
-        console.log(item);
         return (
           <div key={i}>
             <div className={styles.featured_item}>

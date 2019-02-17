@@ -106,7 +106,6 @@ class NewsList extends Component<IProp, {}> {
     return template;
   };
   render() {
-    console.log(this.state.teams);
     return (
       <div>
         <TransitionGroup component="div" className="list">
