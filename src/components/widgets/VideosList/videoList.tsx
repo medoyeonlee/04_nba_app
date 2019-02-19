@@ -79,7 +79,7 @@ class videosList extends Component<IProps, IState> {
   };
   loadMore = () => {
     let end = this.state.end + this.state.amount;
-    console.log(this.state.end, end);
+
     this.request(this.state.end, end);
   };
   renderButton = () => {

@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import CardInfo from '../CardInfo/cardInfo';
 import { IVideos, IState } from './videoList';
 import { ITeams } from '../NewsList/newsList';
+
 interface IProps {
   videos: IVideos[];
   teams: ITeams[];
 }
 const VideosListTemplate = (props: IProps): JSX.Element => {
-  console.log(props);
-
   return (
     <div>
       {props.videos.map((item, i) => {
